@@ -1,0 +1,33 @@
+{
+    "name": "webco/neos-taxonomy",
+    "type": "typo3-flow-package",
+    "description": "web&co neos taxonomy package",
+    "keywords": ["typo3", "flow", "neos", "taxonomy"],
+    "homepage": "http://webandco.com",
+    "license": "WEBCO",
+    "authors": [
+        {
+            "name": "Markus Pfeifenberger",
+            "email": "markus@webandco.com",
+            "homepage": "http://webandco.com",
+            "role": "Developer"
+        },
+        {
+            "name": "David Spiola",
+            "email": "david@webandco.com",
+            "homepage": "http://webandco.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@webandco.com"
+    },
+    "require": {
+        "typo3/neos": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Webco\\Taxonomy": "Classes"
+        }
+    }
+}

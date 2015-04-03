@@ -1,0 +1,39 @@
+'Webco.Taxonomy:Taxonomy':
+  abstract: true
+
+'Webco.Taxonomy:DocumentTaxonomyStorage':
+  abstract: false
+  superTypes:
+    - 'Webco.Fra001:Document'
+  ui:
+    icon: 'icon-tags'
+    label: 'Taxonomy Storage'
+
+'Webco.Taxonomy:DocumentTaxonomyVocabulary':
+  abstract: false
+  superTypes:
+    - 'Webco.Fra001:Document'
+  ui:
+    icon: 'icon-tags'
+    label: 'Taxonomy Vocabulary'
+  properties:
+    controlled:
+      type: boolean
+      defaultValue: true
+
+'Webco.Taxonomy:DocumentTaxonomy':
+  abstract: false
+  superTypes:
+    - 'Webco.Fra001:Document'
+    - 'Webco.Taxonomy:Taxonomy'
+  ui:
+    icon: 'icon-tags'
+    label: 'Taxonomy'
+
+'Webco.Taxonomy:DocumentTaxonomyFree':
+  abstract: true
+  superTypes:
+    - 'Webco.Taxonomy:DocumentTaxonomy'
+  properties:
+    taxonomy:
+      type: string
