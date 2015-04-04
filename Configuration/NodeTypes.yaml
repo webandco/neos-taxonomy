@@ -4,36 +4,67 @@
 'Webco.Taxonomy:DocumentTaxonomyStorage':
   abstract: false
   superTypes:
-    - 'Webco.Fra001:Document'
+    - 'TYPO3.Neos:Document'
   ui:
     icon: 'icon-tags'
     label: 'Taxonomy Storage'
+    group: 'taxonomy'
 
 'Webco.Taxonomy:DocumentTaxonomyVocabulary':
   abstract: false
   superTypes:
-    - 'Webco.Fra001:Document'
+    - 'TYPO3.Neos:Document'
   ui:
     icon: 'icon-tags'
     label: 'Taxonomy Vocabulary'
+    group: 'taxonomy'
   properties:
     controlled:
       type: boolean
       defaultValue: true
 
+'Webco.Taxonomy:DocumentTaxonomyAbstract':
+  abstract: true
+  superTypes:
+    - 'Webco.Taxonomy:Taxonomy'
+    - 'TYPO3.Neos:Document'
+
 'Webco.Taxonomy:DocumentTaxonomy':
   abstract: false
   superTypes:
-    - 'Webco.Fra001:Document'
-    - 'Webco.Taxonomy:Taxonomy'
+    - 'Webco.Taxonomy:DocumentTaxonomyAbstract'
   ui:
-    icon: 'icon-tags'
-    label: 'Taxonomy'
-
-'Webco.Taxonomy:DocumentTaxonomyFree':
-  abstract: true
-  superTypes:
-    - 'Webco.Taxonomy:DocumentTaxonomy'
+    icon: 'icon-tag'
+    label: 'Free Tag'
+    group: 'taxonomy'
+    inspector:
+      groups:
+        meta:
+          label: 'Meta Data'
   properties:
     taxonomy:
       type: string
+      inspector:
+        group: 'meta'
+
+'Webco.Taxonomy:List':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    icon: icon-gear
+    label: Dynamic Taxonomy Box
+    inspector:
+      groups:
+        meta:
+          label: 'Meta Data'
+  properties:
+    taxonomies:
+      ui:
+        reloadIfChanged: true
+        inspector:
+          editorOptions:
+            nodeTypes:
+              - 'Webco.Taxonomy:Taxonomy'
+          group: meta
+        label: 'Taxonomies'
+      type: references

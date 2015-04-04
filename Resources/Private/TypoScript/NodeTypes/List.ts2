@@ -1,0 +1,23 @@
+/**
+* Generic Dynamic Content Box
+**/
+prototype(Webco.Taxonomy:List) >
+prototype(Webco.Taxonomy:List) < prototype(TYPO3.Neos:Content)  {
+    templatePath = 'resource://Webco.Taxonomy/Private/Templates/NodeTypes/List.html'
+    collection = TYPO3.TypoScript:Collection {
+        collection = ${q(site).find('[instanceof TYPO3.Neos:Document]').filter('[taxonomies]').intersect('property', 'taxonomies', node.properties.taxonomies)}
+        itemRenderer = Webco.Taxonomy:ListItem
+        itemName = 'node'
+        iterationName = 'iterator'
+        @process.wrapInUl = ${'<ul>' + value + '</ul>'}
+    }
+}
+
+/*
+* Generic Dynamic Content Box Item
+*/
+prototype(Webco.Taxonomy:ListItem) < prototype(TYPO3.TypoScript:Template) {
+    templatePath = 'resource://Webco.Taxonomy/Private/Templates/NodeTypes/ListItem.html'
+    title = ${q(node).property('title')}
+    node = ${node}
+}

@@ -1,0 +1,18 @@
+'Webco.Taxonomy:TaxonomyMixin':
+  ui:
+    inspector:
+      groups:
+        taxonomy:
+          label: 'Taxonomy'
+          position: 20
+  properties:
+    taxonomies:
+      ui:
+        reloadIfChanged: true
+        label: 'Taxonomies'
+        inspector:
+          editorOptions:
+            nodeTypes:
+              - 'Webco.Taxonomy:Taxonomy'
+          group: taxonomy
+      type: references

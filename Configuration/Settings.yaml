@@ -1,0 +1,12 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'Webco.Taxonomy': TRUE
+    nodeTypes:
+      groups:
+        taxonomy:
+          position: 'start'
+          label: 'Taxonomy'
+
+
