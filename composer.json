@@ -4,7 +4,7 @@
     "description": "web&co neos taxonomy package",
     "keywords": ["typo3", "flow", "neos", "taxonomy"],
     "homepage": "http://webandco.com",
-    "license": "WEBANDCO",
+    "license": "GPL-3.0+",
     "authors": [
         {
             "name": "Markus Pfeifenberger",
