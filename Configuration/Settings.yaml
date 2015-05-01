@@ -2,7 +2,7 @@ TYPO3:
   Neos:
     typoScript:
       autoInclude:
-        'Webco.Taxonomy': TRUE
+        'Webandco.Taxonomy': TRUE
     nodeTypes:
       groups:
         taxonomy:

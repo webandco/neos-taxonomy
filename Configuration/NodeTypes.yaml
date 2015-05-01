@@ -1,7 +1,7 @@
-'Webco.Taxonomy:Taxonomy':
+'Webandco.Taxonomy:Taxonomy':
   abstract: true
 
-'Webco.Taxonomy:DocumentTaxonomyStorage':
+'Webandco.Taxonomy:DocumentTaxonomyStorage':
   abstract: false
   superTypes:
     - 'TYPO3.Neos:Document'
@@ -10,7 +10,7 @@
     label: 'Taxonomy Storage'
     group: 'taxonomy'
 
-'Webco.Taxonomy:DocumentTaxonomyVocabulary':
+'Webandco.Taxonomy:DocumentTaxonomyVocabulary':
   abstract: false
   superTypes:
     - 'TYPO3.Neos:Document'
@@ -23,16 +23,16 @@
       type: boolean
       defaultValue: true
 
-'Webco.Taxonomy:DocumentTaxonomyAbstract':
+'Webandco.Taxonomy:DocumentTaxonomyAbstract':
   abstract: true
   superTypes:
-    - 'Webco.Taxonomy:Taxonomy'
+    - 'Webandco.Taxonomy:Taxonomy'
     - 'TYPO3.Neos:Document'
 
-'Webco.Taxonomy:DocumentTaxonomy':
+'Webandco.Taxonomy:DocumentTaxonomy':
   abstract: false
   superTypes:
-    - 'Webco.Taxonomy:DocumentTaxonomyAbstract'
+    - 'Webandco.Taxonomy:DocumentTaxonomyAbstract'
   ui:
     icon: 'icon-tag'
     label: 'Free Tag'
@@ -47,7 +47,7 @@
       inspector:
         group: 'meta'
 
-'Webco.Taxonomy:List':
+'Webandco.Taxonomy:List':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
@@ -64,7 +64,7 @@
         inspector:
           editorOptions:
             nodeTypes:
-              - 'Webco.Taxonomy:Taxonomy'
+              - 'Webandco.Taxonomy:Taxonomy'
           group: meta
         label: 'Taxonomies'
       type: references

@@ -1,10 +1,10 @@
 {
-    "name": "webco/neos-taxonomy",
+    "name": "webandco/neos-taxonomy",
     "type": "typo3-flow-package",
     "description": "web&co neos taxonomy package",
     "keywords": ["typo3", "flow", "neos", "taxonomy"],
     "homepage": "http://webandco.com",
-    "license": "WEBCO",
+    "license": "WEBANDCO",
     "authors": [
         {
             "name": "Markus Pfeifenberger",
@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Webco\\Taxonomy": "Classes"
+            "Webandco\\Taxonomy": "Classes"
         }
     }
 }

@@ -1,4 +1,4 @@
-'Webco.Taxonomy:TaxonomyMixin':
+'Webandco.Taxonomy:TaxonomyMixin':
   ui:
     inspector:
       groups:
@@ -13,6 +13,6 @@
         inspector:
           editorOptions:
             nodeTypes:
-              - 'Webco.Taxonomy:Taxonomy'
+              - 'Webandco.Taxonomy:Taxonomy'
           group: taxonomy
       type: references
