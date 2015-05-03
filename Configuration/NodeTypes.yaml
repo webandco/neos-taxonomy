@@ -1,3 +1,18 @@
+'TYPO3.Neos.NodeTypes:Page':
+  superTypes:
+    'Webandco.Taxonomy:TaxonomyMixin': 'Webandco.Taxonomy:TaxonomyMixin'
+  ui:
+    inspector:
+      tabs:
+        taxonomy:
+          label: 'Taxonomy'
+          position: 30
+          icon: 'icon-tag'
+
+'TYPO3.Neos:Shortcut':
+  superTypes:
+    'Webandco.Taxonomy:TaxonomyMixin': ~
+
 'Webandco.Taxonomy:Taxonomy':
   abstract: true
 
