@@ -35,7 +35,7 @@
     - 'Webandco.Taxonomy:DocumentTaxonomyAbstract'
   ui:
     icon: 'icon-tag'
-    label: 'Free Tag'
+    label: 'Tag'
     group: 'taxonomy'
     inspector:
       groups:
