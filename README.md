@@ -5,26 +5,28 @@ This package provides taxonomy functionality for typo3 neos.
 
 ## Structure
 ### Document NodeTypes
-* DocumentTaxonomyStorage
+* DocumentTaxonomyStorage:
     Taxonomy root node (entry point)
     
-* DocumentTaxonomyVocabulary
+* DocumentTaxonomyVocabulary:
     You can specify one or many vocabularies with individual access rights or behavior.
+    
     eg. "Free" for free tagging
+    
     eg. "Location" to provide structured taxonomies like country, state, city, ...
     
-* DocumentTaxonomy
+* DocumentTaxonomy:
     Create new nodes and use them as taxonomies right away. 
     
 * DocumentTaxonomyAbstract (for extending custom nodeTypes)
     Extend custom nodetypes for more specific FlowQuery expressions.
 
 ### Content NodeTypes
-* TaxonomyList
+* TaxonomyList:
     A simple view you can use to show a list of nodes matching taxonomies utilized by the "intersect" FlowQuery operator.  
 
 ### Abstract NodeTypes
-* Webandco.Taxonomy:Taxonomy
+* Webandco.Taxonomy:Taxonomy:
     Every nodeType inheriting Webandco.Taxonomy:Taxonomy will be available in the inspector - eg. utilized in the TaxonomyList yaml definition.
      
 ### Intersect FlowQuery Operation
@@ -55,10 +57,15 @@ ${q(site).find('[instanceof TYPO3.Neos:Document]').filter('[taxonomies]').inters
 ${q(site).find('[instanceof TYPO3.Neos:Document]').filter('[taxonomies]').intersect('property', 'taxonomies', node.properties.taxonomies).intersect('node', 'nodeType', node.properties.locations)}
 ```
 
+## TODO's
+* Roadmap
+* Neutral namespacing (eg. Flowpack or Neos)
+* Performance 
+* Testing
+
 ## What's next ?
-To make this an official flow package or even a core module, several tasks like neutral namespaces, enhancements, performance and testing are necessary. So please do not hesitate and contribute or contact us over GitHub.  
-
-
+To make this an official flow package or even a core module, we need help. So please do not hesitate and contribute or contact us over GitHub. We would also like to enhance the package to serve as a system wide taxonomy solution (eg. for the media package) in the future.  
+  
 Happy Coding!
 
-# Pull Requests are welcome !!
+# Pull Requests are welcome!!
