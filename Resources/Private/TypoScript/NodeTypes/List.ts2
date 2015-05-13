@@ -13,11 +13,12 @@ prototype(Webandco.Taxonomy:List) < prototype(TYPO3.Neos:Content)  {
     }
 }
 
-/**
- * Generic Dynamic Content Box Item
- */
-prototype(Webandco.Taxonomy:ListItem) < prototype(TYPO3.TypoScript:Template) {
-    templatePath = 'resource://Webandco.Taxonomy/Private/Templates/NodeTypes/ListItem.html'
+
+/*
+* Generic Dynamic Content Box Item
+*/
+prototype(Webco.Taxonomy:ListItem) < prototype(TYPO3.Neos:Template) {
+    templatePath = 'resource://Webco.Taxonomy/Private/Templates/NodeTypes/ListItem.html'
     title = ${q(node).property('title')}
     node = ${node}
 }
