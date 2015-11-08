@@ -8,12 +8,11 @@
           tab: taxonomy
   properties:
     taxonomies:
+      type: references
       ui:
         reloadIfChanged: true
         label: 'Taxonomies'
         inspector:
           editorOptions:
-            nodeTypes:
-              'Webco.Taxonomy:Taxonomy': TRUE
+            nodeTypes: ['Webco.Taxonomy:Taxonomy']
           group: taxonomy
-      type: references

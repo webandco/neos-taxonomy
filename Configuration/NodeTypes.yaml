@@ -74,12 +74,11 @@
           label: 'Meta Data'
   properties:
     taxonomies:
+      type: references
       ui:
         reloadIfChanged: true
         inspector:
           editorOptions:
-            nodeTypes:
-              - 'Webandco.Taxonomy:Taxonomy'
+            nodeTypes: ['Webco.Taxonomy:Taxonomy']
           group: meta
-        label: 'Taxonomies'
-      type: references
+        label: Taxonomies
