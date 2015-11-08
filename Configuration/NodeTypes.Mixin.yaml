@@ -2,10 +2,9 @@
   ui:
     inspector:
       groups:
-        taxonomymeta:
+        taxonomy:
           label: 'Taxonomy'
-          position: 10
-          tab: taxonomy
+          position: 20
   properties:
     taxonomies:
       type: references
@@ -14,5 +13,5 @@
         label: 'Taxonomies'
         inspector:
           editorOptions:
-            nodeTypes: ['Webco.Taxonomy:Taxonomy']
+            nodeTypes: ['Webandco.Taxonomy:Taxonomy']
           group: taxonomy

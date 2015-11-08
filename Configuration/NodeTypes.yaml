@@ -1,38 +1,23 @@
-'TYPO3.Neos.NodeTypes:Page':
-  superTypes:
-    'Webandco.Taxonomy:TaxonomyMixin': 'Webandco.Taxonomy:TaxonomyMixin'
-  ui:
-    inspector:
-      tabs:
-        taxonomy:
-          label: 'Taxonomy'
-          position: 30
-          icon: 'icon-tag'
-
-'TYPO3.Neos:Shortcut':
-  superTypes:
-    'Webandco.Taxonomy:TaxonomyMixin': ~
-
 'Webandco.Taxonomy:Taxonomy':
   abstract: true
 
 'Webandco.Taxonomy:DocumentTaxonomyStorage':
   abstract: false
   superTypes:
-    - 'TYPO3.Neos:Document'
+    'TYPO3.Neos:Document': true
   ui:
-    icon: 'icon-tags'
+    icon: icon-tags
     label: 'Taxonomy Storage'
-    group: 'taxonomy'
+    group: taxonomy
 
 'Webandco.Taxonomy:DocumentTaxonomyVocabulary':
   abstract: false
   superTypes:
-    - 'TYPO3.Neos:Document'
+    'TYPO3.Neos:Document': true
   ui:
-    icon: 'icon-tags'
+    icon: icon-tags
     label: 'Taxonomy Vocabulary'
-    group: 'taxonomy'
+    group: taxonomy
   properties:
     controlled:
       type: boolean
@@ -41,17 +26,17 @@
 'Webandco.Taxonomy:DocumentTaxonomyAbstract':
   abstract: true
   superTypes:
-    - 'Webandco.Taxonomy:Taxonomy'
-    - 'TYPO3.Neos:Document'
+    'Webandco.Taxonomy:Taxonomy': true
+    'TYPO3.Neos:Document': true
 
 'Webandco.Taxonomy:DocumentTaxonomy':
   abstract: false
   superTypes:
-    - 'Webandco.Taxonomy:DocumentTaxonomyAbstract'
+    'Webandco.Taxonomy:DocumentTaxonomyAbstract': true
   ui:
-    icon: 'icon-tag'
-    label: 'Tag'
-    group: 'taxonomy'
+    icon: icon-tag
+    label: 'Free'
+    group: taxonomy
     inspector:
       groups:
         meta:
@@ -60,14 +45,14 @@
     taxonomy:
       type: string
       inspector:
-        group: 'meta'
+        group: meta
 
 'Webandco.Taxonomy:List':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
     icon: icon-gear
-    label: Dynamic Taxonomy Box
+    label: 'Dynamic Taxonomy Box'
     inspector:
       groups:
         meta:
@@ -79,6 +64,6 @@
         reloadIfChanged: true
         inspector:
           editorOptions:
-            nodeTypes: ['Webco.Taxonomy:Taxonomy']
+            nodeTypes: ['Webandco.Taxonomy:Taxonomy']
           group: meta
         label: Taxonomies
