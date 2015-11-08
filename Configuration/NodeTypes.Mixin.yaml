@@ -14,6 +14,6 @@
         inspector:
           editorOptions:
             nodeTypes:
-              - 'Webandco.Taxonomy:Taxonomy'
-          group: taxonomymeta
+              'Webco.Taxonomy:Taxonomy': TRUE
+          group: taxonomy
       type: references
