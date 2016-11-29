@@ -23,7 +23,8 @@
         "email": "support@webandco.com"
     },
     "require": {
-        "typo3/neos": "^2.0"
+        "typo3/neos": "^2.0",
+        "webandco/base": "^1.0"
     },
     "autoload": {
         "psr-0": {
