@@ -1,10 +1,14 @@
+'Neos.Neos:Document':
+  superTypes:
+    - 'Webandco.Taxonomy:TaxonomyMixin'
+
 'Webandco.Taxonomy:Taxonomy':
   abstract: true
 
 'Webandco.Taxonomy:DocumentTaxonomyStorage':
   abstract: false
   superTypes:
-    'TYPO3.Neos:Document': true
+    'Neos.Neos:Document': true
   ui:
     icon: icon-tags
     label: 'Taxonomy Storage'
@@ -13,7 +17,7 @@
 'Webandco.Taxonomy:DocumentTaxonomyVocabulary':
   abstract: false
   superTypes:
-    'TYPO3.Neos:Document': true
+    'Neos.Neos:Document': true
   ui:
     icon: icon-tags
     label: 'Taxonomy Vocabulary'
@@ -27,7 +31,7 @@
   abstract: true
   superTypes:
     'Webandco.Taxonomy:Taxonomy': true
-    'TYPO3.Neos:Document': true
+    'Neos.Neos:Document': true
 
 'Webandco.Taxonomy:DocumentTaxonomy':
   abstract: false
@@ -49,7 +53,7 @@
 
 'Webandco.Taxonomy:List':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     icon: icon-gear
     label: 'Dynamic Taxonomy Box'

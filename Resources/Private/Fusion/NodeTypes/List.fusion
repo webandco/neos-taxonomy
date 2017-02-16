@@ -2,10 +2,10 @@
  * Generic Dynamic Content Box
  */
 prototype(Webandco.Taxonomy:List) >
-prototype(Webandco.Taxonomy:List) < prototype(TYPO3.Neos:Content)  {
+prototype(Webandco.Taxonomy:List) < prototype(Neos.Neos:Content)  {
     templatePath = 'resource://Webandco.Taxonomy/Private/Templates/NodeTypes/List.html'
-    collection = TYPO3.TypoScript:Collection {
-        collection = ${q(site).find('[instanceof TYPO3.Neos:Document]').filter('[taxonomies]').intersect('property', 'taxonomies', node.properties.taxonomies)}
+    collection = Neos.Fusion:Collection {
+        collection = ${q(site).find('[instanceof Neos.Neos:Document]').filter('[taxonomies]').intersect('property', 'taxonomies', node.properties.taxonomies)}
         itemRenderer = Webandco.Taxonomy:ListItem
         itemName = 'node'
         iterationName = 'iterator'
@@ -17,8 +17,8 @@ prototype(Webandco.Taxonomy:List) < prototype(TYPO3.Neos:Content)  {
 /*
 * Generic Dynamic Content Box Item
 */
-prototype(Webco.Taxonomy:ListItem) < prototype(TYPO3.Neos:Template) {
-    templatePath = 'resource://Webco.Taxonomy/Private/Templates/NodeTypes/ListItem.html'
+prototype(Webandco.Taxonomy:ListItem) < prototype(Neos.Fusion:Template) {
+    templatePath = 'resource://Webandco.Taxonomy/Private/Templates/NodeTypes/ListItem.html'
     title = ${q(node).property('title')}
     node = ${node}
 }

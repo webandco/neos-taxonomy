@@ -1,7 +1,7 @@
-TYPO3 Neos Taxonomy Package
+Neos Taxonomy Package
 =========================================================
 
-This package provides taxonomy functionality for typo3 neos.
+This package provides taxonomy functionality for Neos CMS.
 
 ## Structure
 ### Document NodeTypes
@@ -50,11 +50,11 @@ In order to find nodes use the provided intersect() FlowQuery Operator. Like wit
 ### Examples
 **List.ts2 implementation**
 ```
-${q(site).find('[instanceof TYPO3.Neos:Document]').filter('[taxonomies]').intersect('property', 'taxonomies', node.properties.taxonomies)}
+${q(site).find('[instanceof Neos.Neos:Document]').filter('[taxonomies]').intersect('property', 'taxonomies', node.properties.taxonomies)}
 ```
 **Chaining implementation**
 ```
-${q(site).find('[instanceof TYPO3.Neos:Document]').filter('[taxonomies]').intersect('property', 'taxonomies', node.properties.taxonomies).intersect('node', 'nodeType', node.properties.locations)}
+${q(site).find('[instanceof Neos.Neos:Document]').filter('[taxonomies]').intersect('property', 'taxonomies', node.properties.taxonomies).intersect('node', 'nodeType', node.properties.locations)}
 ```
 
 ## TODO's
@@ -63,9 +63,4 @@ ${q(site).find('[instanceof TYPO3.Neos:Document]').filter('[taxonomies]').inters
 * Performance 
 * Testing
 
-## What's next ?
-To make this an official flow package or even a core module, we need help. So please do not hesitate and contribute or contact us over GitHub. We would also like to enhance the package to serve as a system wide taxonomy solution (eg. for the media package) in the future.  
-  
-Happy Coding!
-
-# Pull Requests are welcome!!
+## Pull Requests are welcome!!

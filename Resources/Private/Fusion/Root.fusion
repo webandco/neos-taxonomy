@@ -1,0 +1,19 @@
+include: NodeTypes/*
+
+root.taxonomyStorage {
+    position = 'start'
+    condition = ${q(node).is('[instanceof Webandco.Taxonomy:DocumentTaxonomyStorage]')}
+    type = 'Webandco.Taxonomy:DocumentDefault'
+}
+
+root.taxonomyVocabulary{
+    position = 'start'
+    condition = ${q(node).is('[instanceof Webandco.Taxonomy:DocumentTaxonomyVocabulary]')}
+    type = 'Webandco.Taxonomy:DocumentDefault'
+}
+
+root.taxonomyTag {
+    position = 'start'
+    condition = ${q(node).is('[instanceof Webandco.Taxonomy:DocumentTaxonomyAbstract]')}
+    type = 'Webandco.Taxonomy:DocumentDefault'
+}

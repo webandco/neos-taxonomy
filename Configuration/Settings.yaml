@@ -1,6 +1,6 @@
-TYPO3:
+Neos:
   Neos:
-    typoScript:
+    fusion:
       autoInclude:
         'Webandco.Taxonomy': TRUE
     nodeTypes:
