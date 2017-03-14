@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Webandco\\Taxonomy": "Classes"
+            "Webandco\\Taxonomy\\": "Classes"
         }
     }
 }
