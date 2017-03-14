@@ -24,7 +24,7 @@
     },
     "require": {
         "neos/neos": "^3.0",
-        "webandco/neos-base": "^1.0"
+        "webandco/neos-base": "^2.0"
     },
     "autoload": {
         "psr-4": {
