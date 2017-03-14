@@ -1,8 +1,8 @@
 {
     "name": "webandco/neos-taxonomy",
-    "type": "typo3-flow-package",
+    "type": "neos-package",
     "description": "web&co neos taxonomy package",
-    "keywords": ["typo3", "flow", "neos", "taxonomy"],
+    "keywords": ["flow", "neos", "taxonomy"],
     "homepage": "http://webandco.com",
     "license": "GPL-3.0+",
     "authors": [
