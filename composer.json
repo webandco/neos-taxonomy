@@ -23,11 +23,11 @@
         "email": "support@webandco.com"
     },
     "require": {
-        "typo3/neos": "^2.0",
+        "neos/neos": "^3.0",
         "webandco/neos-base": "^1.0"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Webandco\\Taxonomy": "Classes"
         }
     }
