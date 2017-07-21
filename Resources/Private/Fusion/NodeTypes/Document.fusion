@@ -2,5 +2,7 @@ prototype(Webandco.Taxonomy:DocumentDefault) >
 prototype(Webandco.Taxonomy:DocumentDefault) < prototype(Neos.Neos:Page) {
     body {
         templatePath = 'resource://Webandco.Taxonomy/Private/Templates/Page/Default.html'
+        content >
+        content = '<h1>Taxonomy Node</h1>'
     }
 }

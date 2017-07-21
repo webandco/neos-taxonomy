@@ -23,8 +23,7 @@
         "email": "support@webandco.com"
     },
     "require": {
-        "neos/neos": "^3.0",
-        "webandco/neos-base": "^2.0"
+        "neos/neos": "^3.0"
     },
     "require-dev": {
         "neos/neos": "^3.0",
