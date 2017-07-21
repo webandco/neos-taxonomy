@@ -26,8 +26,7 @@
         "neos/neos": "^3.0"
     },
     "require-dev": {
-        "neos/neos": "^3.0",
-        "webandco/neos-base": "dev-master"
+        "neos/neos": "^3.0"
     },
     "autoload": {
         "psr-4": {
