@@ -75,7 +75,7 @@ class IntersectOperation extends AbstractOperation {
         // @todo: check if all arguments are available
         if (!isset($arguments[0]) || empty($arguments[0])) {
             throw new \Neos\Eel\FlowQuery\FlowQueryException('intersect() needs property name by which nodes should be matched', 1430401014);
-        } else if (!is_array($arguments[2]) || count($arguments[2]) === 0) {
+        } else if (!isset($arguments[2])) {
             //return the query if the second argument is not set.
             return $flowQuery->getContext();
         } else {
