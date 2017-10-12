@@ -4,13 +4,16 @@
       groups:
         taxonomy:
           label: 'Taxonomy'
+          icon: icon-tag
           position: 20
+          collapsed: true
   properties:
     taxonomies:
       type: references
       ui:
         reloadIfChanged: true
         label: 'Taxonomies'
+        icon: icon-tag
         inspector:
           editorOptions:
             nodeTypes: ['Webandco.Taxonomy:Taxonomy']
