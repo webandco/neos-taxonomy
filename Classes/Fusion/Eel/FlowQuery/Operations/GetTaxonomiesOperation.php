@@ -11,6 +11,7 @@ use Neos\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Flow\Annotations as Flow;
 use Neos\ContentRepository\Domain\Model\Node;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
+use Webandco\Taxonomy\Service\Taxonomy;
 
 /**
  * EEL intersect() operation finds cut set of nodes
@@ -31,10 +32,10 @@ class GetTaxonomiesOperation extends AbstractOperation {
     protected $nodeRepository;
 
     /**
+     * @var Taxonomy
      * @Flow\Inject
-     * @var \Neos\Neos\Service\UserService
      */
-    protected $userService;
+    protected $taxonomyService;
 
     /**
      * {@inheritdoc}
@@ -49,6 +50,7 @@ class GetTaxonomiesOperation extends AbstractOperation {
      * @var integer
      */
     static protected $priority = 100;
+
 
     /**
      * {@inheritdoc}
@@ -71,15 +73,24 @@ class GetTaxonomiesOperation extends AbstractOperation {
      */
     public function evaluate(FlowQuery $flowQuery, array $arguments = array())
     {
+
         $nodes = $flowQuery->getContext();
         $taxonomies = array();
+        $vocabularyFilter = isset($arguments[0]) && is_string($arguments[0]) ? $arguments[0] : null;
+
         if (!empty($nodes)) {
-            /** @var Node $node */
+            /** @var NodeInterface $node */
             foreach ($nodes as $node) {
-                /** @var Node $t */
                 if ($node->getProperty('taxonomies') != null) {
+                    /** @var NodeInterface $t */
                     foreach ($node->getProperty('taxonomies') as $t) {
-                        if (!in_array($t, $taxonomies)) {
+
+                        $parents = $this->getParentTaxonomies($this->taxonomyService->findDimensionVariant($t));
+
+                        /** @var NodeInterface $vocabulary */
+                        $vocabulary = end($parents);
+
+                        if (($vocabularyFilter === null || $vocabulary->getProperty('uriPathSegment') === $vocabularyFilter) && !in_array($t, $taxonomies)) {
                             $this->systemLogger->log('Add Node "' . $t->getProperty('title') . '" to taxonomy list');
                             $taxonomies[] = $t;
                         }
@@ -89,5 +100,19 @@ class GetTaxonomiesOperation extends AbstractOperation {
         }
 
         $flowQuery->setContext($taxonomies);
+    }
+
+     /**
+     * @param NodeInterface $taxonomy
+     * @return array
+     */
+    protected function getParentTaxonomies(NodeInterface $taxonomy)
+    {
+        $parents = array();
+        while ($taxonomy->getParent() !== null && !$taxonomy->getNodeType()->isOfType('Webandco.Taxonomy:DocumentTaxonomyVocabulary')) {
+            $taxonomy = $taxonomy->getParent();
+            $parents[] = $taxonomy;
+        }
+        return $parents;
     }
 }

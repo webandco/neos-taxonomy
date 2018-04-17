@@ -8,3 +8,7 @@ Neos:
         taxonomy:
           position: 'start'
           label: 'Taxonomy'
+
+  Fusion:
+    defaultContext:
+      'Webandco.Taxonomy': 'Webandco\Taxonomy\Fusion\Helper\TaxonomyHelper'
