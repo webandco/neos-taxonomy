@@ -39,7 +39,8 @@
     'Webandco.Taxonomy:DocumentTaxonomyAbstract': true
   ui:
     icon: icon-tag
-    label: 'Free'
+    label: 'Taxonomy
+    '
     group: taxonomy
     inspector:
       groups:
