@@ -23,10 +23,7 @@
         "email": "support@webandco.com"
     },
     "require": {
-        "neos/neos": "^3.0"
-    },
-    "require-dev": {
-        "neos/neos": "^3.0"
+        "neos/neos": "^3.0 || ^4.0"
     },
     "autoload": {
         "psr-4": {
