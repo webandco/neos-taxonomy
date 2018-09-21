@@ -39,8 +39,7 @@
     'Webandco.Taxonomy:DocumentTaxonomyAbstract': true
   ui:
     icon: icon-tag
-    label: 'Taxonomy
-    '
+    label: 'Taxonomy'
     group: taxonomy
     inspector:
       groups:
