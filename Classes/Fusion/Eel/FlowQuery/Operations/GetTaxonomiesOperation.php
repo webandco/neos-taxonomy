@@ -20,12 +20,6 @@ use Webandco\Taxonomy\Service\Taxonomy;
 class GetTaxonomiesOperation extends AbstractOperation {
 
     /**
-     * @var \Neos\Flow\Log\SystemLoggerInterface
-     * @Flow\Inject
-     */
-    protected $systemLogger;
-
-    /**
      * @var \Neos\ContentRepository\Domain\Repository\NodeDataRepository
      * @Flow\Inject
      */
@@ -91,7 +85,6 @@ class GetTaxonomiesOperation extends AbstractOperation {
                         $vocabulary = end($parents);
 
                         if (($vocabularyFilter === null || $vocabulary->getProperty('uriPathSegment') === $vocabularyFilter) && !in_array($t, $taxonomies)) {
-                            $this->systemLogger->log('Add Node "' . $t->getProperty('title') . '" to taxonomy list');
                             $taxonomies[] = $t;
                         }
                     }

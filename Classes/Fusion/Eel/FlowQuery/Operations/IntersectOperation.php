@@ -19,12 +19,6 @@ use Neos\ContentRepository\Domain\Model\NodeInterface;
 class IntersectOperation extends AbstractOperation {
 
     /**
-     * @var \Neos\Flow\Log\SystemLoggerInterface
-     * @Flow\Inject
-     */
-    protected $systemLogger;
-
-    /**
      * @var \Neos\ContentRepository\Domain\Repository\NodeDataRepository
      * @Flow\Inject
      */
@@ -90,7 +84,6 @@ class IntersectOperation extends AbstractOperation {
             /** @var Node $taxonomy */
             foreach (is_array($arguments[2]) ? $arguments[2]: array($arguments[2]) as $taxonomy) {
                 if (!in_array($taxonomy->getName(), $taxonomies)) {
-                    $this->systemLogger->log($taxonomy->getProperty('title'));
                     $taxonomies[] = $taxonomy->getName();
                 }
             }
