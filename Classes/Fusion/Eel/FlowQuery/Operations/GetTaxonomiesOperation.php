@@ -102,8 +102,8 @@ class GetTaxonomiesOperation extends AbstractOperation {
     protected function getParentTaxonomies(NodeInterface $taxonomy)
     {
         $parents = array();
-        while ($taxonomy->getParent() !== null && !$taxonomy->getNodeType()->isOfType('Webandco.Taxonomy:DocumentTaxonomyVocabulary')) {
-            $taxonomy = $taxonomy->getParent();
+        while ($taxonomy->findParentNode() !== null && !$taxonomy->getNodeType()->isOfType('Webandco.Taxonomy:DocumentTaxonomyVocabulary')) {
+            $taxonomy = $taxonomy->findParentNode();
             $parents[] = $taxonomy;
         }
         return $parents;

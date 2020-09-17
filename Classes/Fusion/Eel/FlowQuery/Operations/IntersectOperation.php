@@ -83,8 +83,8 @@ class IntersectOperation extends AbstractOperation {
             $taxonomies = array();
             /** @var Node $taxonomy */
             foreach (is_array($arguments[2]) ? $arguments[2]: array($arguments[2]) as $taxonomy) {
-                if (!in_array($taxonomy->getName(), $taxonomies)) {
-                    $taxonomies[] = $taxonomy->getName();
+                if (!in_array($taxonomy->getNodeName(), $taxonomies)) {
+                    $taxonomies[] = $taxonomy->getNodeName();
                 }
             }
 
@@ -135,7 +135,7 @@ class IntersectOperation extends AbstractOperation {
 
         /** @var Node $node */
         foreach ($nodes as $node) {
-            $nodeParts = array_merge(explode('/', substr($node->getPath(), 1)), $nodeParts);
+            $nodeParts = array_merge(explode('/', substr($node->findNodePath(), 1)), $nodeParts);
         }
 
         $nodeParts = array_unique($nodeParts);
