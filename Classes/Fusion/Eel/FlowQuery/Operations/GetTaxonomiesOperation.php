@@ -6,6 +6,7 @@ namespace Webandco\Taxonomy\Fusion\Eel\FlowQuery\Operations;
  * Used to get a list of related Entries                                        *
  *                                                                              */
 
+use Neos\ContentRepository\Exception\NodeException;
 use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Flow\Annotations as Flow;
@@ -102,10 +103,14 @@ class GetTaxonomiesOperation extends AbstractOperation {
     protected function getParentTaxonomies(NodeInterface $taxonomy)
     {
         $parents = array();
-        while ($taxonomy->findParentNode() !== null && !$taxonomy->getNodeType()->isOfType('Webandco.Taxonomy:DocumentTaxonomyVocabulary')) {
-            $taxonomy = $taxonomy->findParentNode();
-            $parents[] = $taxonomy;
-        }
+
+        try {
+            while (!$taxonomy->getNodeType()->isOfType('Webandco.Taxonomy:DocumentTaxonomyVocabulary')) {
+                    $taxonomy = $taxonomy->findParentNode();
+                    $parents[] = $taxonomy;
+            }
+        }catch(NodeException $exception){}
+
         return $parents;
     }
 }
