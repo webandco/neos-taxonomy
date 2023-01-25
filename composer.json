@@ -1,6 +1,6 @@
 {
     "name": "webandco/neos-taxonomy",
-    "type": "neos-package",
+    "type": "neos-webandco",
     "description": "web&co neos taxonomy package",
     "keywords": ["flow", "neos", "taxonomy"],
     "homepage": "http://webandco.com",
