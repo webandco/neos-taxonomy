@@ -1,6 +1,6 @@
 'Neos.Neos:Document':
   superTypes:
-    - 'Webandco.Taxonomy:TaxonomyMixin'
+    'Webandco.Taxonomy:TaxonomyMixin': false
 
 'Webandco.Taxonomy:Taxonomy':
   abstract: true
