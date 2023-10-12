@@ -48,8 +48,9 @@
   properties:
     taxonomy:
       type: string
-      inspector:
-        group: meta
+      ui:
+        inspector:
+          group: meta
 
 'Webandco.Taxonomy:List':
   superTypes:
