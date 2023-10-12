@@ -10,9 +10,13 @@
   superTypes:
     'Neos.Neos:Document': true
   ui:
-    icon: icon-tags
+    icon: warehouse
     label: 'Taxonomy Storage'
     group: taxonomy
+  constraints:
+    nodeTypes:
+      'Neos.Neos:Document': false
+      'Webandco.Taxonomy:DocumentTaxonomyVocabulary': true
 
 'Webandco.Taxonomy:DocumentTaxonomyVocabulary':
   abstract: false
@@ -22,6 +26,10 @@
     icon: icon-tags
     label: 'Taxonomy Vocabulary'
     group: taxonomy
+  constraints:
+    nodeTypes:
+      'Neos.Neos:Document': false
+      'Webandco.Taxonomy:DocumentTaxonomy': true
   properties:
     controlled:
       type: boolean
@@ -45,6 +53,9 @@
       groups:
         meta:
           label: 'Meta Data'
+  constraints:
+    nodeTypes:
+      'Neos.Neos:Document': false
   properties:
     taxonomy:
       type: string
