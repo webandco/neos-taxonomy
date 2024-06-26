@@ -10,8 +10,9 @@ use Neos\ContentRepository\Exception\NodeException;
 use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Flow\Annotations as Flow;
-use Neos\ContentRepository\Domain\Model\Node;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
+use Neos\Flow\Log\Utility\LogEnvironment;
+use Psr\Log\LoggerInterface;
 use Webandco\Taxonomy\Service\Taxonomy;
 
 /**
@@ -19,12 +20,11 @@ use Webandco\Taxonomy\Service\Taxonomy;
  *
  */
 class GetTaxonomiesOperation extends AbstractOperation {
-
     /**
-     * @var \Neos\ContentRepository\Domain\Repository\NodeDataRepository
      * @Flow\Inject
+     * @var LoggerInterface
      */
-    protected $nodeRepository;
+    protected $systemLogger;
 
     /**
      * @var Taxonomy
@@ -79,6 +79,19 @@ class GetTaxonomiesOperation extends AbstractOperation {
                 if ($node->getProperty('taxonomies') != null) {
                     /** @var NodeInterface $t */
                     foreach ($node->getProperty('taxonomies') as $t) {
+                        if (\is_string($t)) {
+                            $taxonomiesNode = $node->getContext()->getNodeByIdentifier($t);
+                            if (!($taxonomiesNode instanceof NodeInterface)) {
+                                $this->systemLogger->error('Taxonomy was not found with identiifer: '.$t, LogEnvironment::fromMethodName(__METHOD__));
+                                continue;
+                            }
+                            $t = $taxonomiesNode;
+                        }
+                        else if (!($t instanceof NodeInterface)) {
+                            $this->systemLogger->error('Taxonomy is not a string and not a NodeInterface: '.\gettype($t), LogEnvironment::fromMethodName(__METHOD__));
+                            $this->systemLogger->error('Logged taxonomy: '.\json_encode($t), LogEnvironment::fromMethodName(__METHOD__));
+                            continue;
+                        }
 
                         $parents = $this->getParentTaxonomies($this->taxonomyService->findDimensionVariant($t));
 
